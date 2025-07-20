@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../kernel"
+		},
+		{
+			"path": "../edk2"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"fstream": "c"
+		}
+	}
+}
