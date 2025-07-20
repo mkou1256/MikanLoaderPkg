@@ -45,6 +45,11 @@ sudo umount "$MNT_DIR"
 
 # 6. QEMUで起動
 qemu-system-x86_64 \
-    -drive if=pflash,file="$OVMF_CODE" \
-    -drive if=pflash,file="$OVMF_VARS" \
-    -hda "$IMG_NAME"
+    -m 1G \
+    -drive if=pflash,format=raw,readonly,file=${SCRIPT_DIR}/OVMF_CODE.fd \
+    -drive if=pflash,format=raw,file=${SCRIPT_DIR}/OVMF_VARS.fd \
+    -drive if=ide,index=0,media=disk,format=raw,file=${SCRIPT_DIR}/disk.img \
+    -device nec-usb-xhci,id=xhci \
+    -device usb-mouse -device usb-kbd \
+    -monitor stdio \
+    $QEMU_OPTS
