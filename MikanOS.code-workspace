@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "../edk2"
+		},
+		{
+			"path": "../osbook/devenv"
 		}
 	],
 	"settings": {
